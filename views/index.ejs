@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Stats</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <% if (typeof number !== "undefined") { %>
+    <h1>Your paragraph contains:</h1>
+    <ul>
+      <li><strong><%= number %></strong> characters</li>
+      <li><strong><%= words %></strong> words</li>
+      <li><strong><%= sentences %></strong> sentences</li>
+    </ul>
+    <% } else { %>
+    <h1>Write your paragraph below</h1>
+    <% } %>
+
+    <form action="/submit" method="POST">
+      <textarea
+        name="paragraph"
+        placeholder="Enter your text here"
+        rows="5"
+        cols="50"
+      ></textarea>
+      <br />
+      <input type="submit" value="Check" />
+    </form>
+  </body>
+</html>
